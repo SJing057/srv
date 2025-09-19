@@ -1,20 +1,54 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <title>my niga</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>momo is my niga</title>
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 50vh;
+    /* 全頁置中與背景 */
+    html, body {
+      height: 100%;
       margin: 0;
-      font-weight: bold;
+      background: #0b1220; /* 深色背景方便白字顯示 */
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    }
+
+    .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* 使用 vw 讓字體隨視窗寬度縮放；clamp 提供上下界 */
+    .big-text {
+      font-weight: 800;
+      font-size: clamp(48px, 12vw, 220px);
+      line-height: 1;
+      margin: 0;
+      letter-spacing: -0.02em;
+      text-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+
+    /* 小螢幕輔助說明（可選） */
+    .hint {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  momo is my niga
+  <div class="wrap" role="main" aria-label="主要內容">
+    <h1 class="big-text" aria-label="momo is my niga">momo is my niga</h1>
+    <div class="hint">視窗調整時文字會自動縮放</div>
+  </div>
 </body>
 </html>
+
